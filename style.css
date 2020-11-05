@@ -1,117 +1,329 @@
-var count = 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color:black; 
+  text-decoration: none;
+}
 
+.title {
+  position: absolute;
+  width: 290px;
+  height: 81px;
+  left: 206px;
+  top: 7px;
 
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
 
-  function sound() {
+  color: #000000;
+}
 
-      soundHit = new Audio('swish.mp3');
-      soundHit.play();
+.border {
+  position: absolute;
+  width: 695px;
+  height: 397px;
+  left: 0px;
+  top: 88px;
 
-  };
+  background: #000000;
+  z-index: -2;
+}
 
-  function gett() {
+.table {
+  position: absolute;
+  width: 684px;
+  height: 386px;
+  left: 5px;
+  top: 93px;
 
-    var cards2 = [
-     ["bg9xXKi", 2], ["zptXFBO", 3], ["qzqR7UD", 4], ["yrFm5qz", 5] ["1lBsrfu", 6], ["fHjITaL", 7], ["Zv5GNvj", 8],["G4bIY2z", 9], ["h24mDAr", 10], ["9REmOzw", 10] ["akpgziS", 10], ["iKiil70", 10], ["noG2HYQ", 1] 
-     ];
+  background: #4F8F28;
+  z-index: -1;
+}
 
+.girl {
+  position: absolute;
+  width: 69px;
+  height: 78px;
+  left: 39px;
+  top: 101px;
+  z-index: 1;
+}
 
-    var randomNum =  Math.floor(Math.random() * cards2.length);
-    var cards3 = cards2[randomNum][0];
-    var cards4 = cards2[randomNum][1];
+.circlePlayer {
+border-radius: 50%;
+position: absolute;
+width: 99px;
+height: 85px;
+left: 24px;
+top: 120px;
+background: #EEAFBA;
+z-index: -1;
+}
 
-    
-    var x = document.createElement("IMG");
-    x.setAttribute("src", "https://i.imgur.com/" + cards3 + ".png");
-    x.setAttribute("position", "absolute");
-    x.setAttribute("width", "65");
-    x.setAttribute("height", "80");
-    x.setAttribute("position", "absolute");
+.playerText {
+  position: absolute;
+  width: 140px;
+  height: 41px;
+  left: 91px;
+  top: 109px;
 
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
 
-    gettAppend = document.querySelector(".cardsPlayerDeck").appendChild(x);
+  color: #000000;
 
+}
 
-    var displayScore = document.querySelector(".playerScore");
-    var sum = parseInt(displayScore.textContent) + cards4;
-    displayScore.textContent = sum;
+.playerText {
+  position: absolute;
+  width: 140px;
+  height: 41px;
+  left: 91px;
+  top: 109px;
 
-     if (sum > 21) {
-          soundHit.pause();
-          var soundAww = new Audio('aww.mp3');
-          soundAww.play();
-          var str = " BUST!";
-          displayScore.textContent = sum + str;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
 
-        };
-
-        
-  document.querySelector(".dealText").addEventListener('click', function() { 
-      document.querySelector(".cardsPlayerDeck").removeChild(x);
-      var displayScore = document.querySelector(".playerScore");
-      var sum = 0;
-      displayScore.textContent = sum;
-  });
+  color: #000000;
+}
+.playerScore {
   
+  font-family: Allerta;
+
+}
+
+.bot {
+  position: absolute;
+  width: 68px;
+  height: 75px;
+  left: 409px;
+  top: 104px;
+  z-index: 1;
+}
+
+.circleBot {
+  border-radius: 50%;
+  position: absolute;
+  width: 99px;
+  height: 85px;
+  left: 390px;
+  top: 120px;
+
+  background: #C4C4C4;
+  z-index: -1;
+}
+
+.botText {
+  position: absolute;
+  width: 140px;
+  height: 41px;
+  left: 445px;
+  top: 110px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.botScore {
+  font-family: Allerta;
+}
+
+.cardPlayer {
+  position: absolute;
+  width: 67px;
+  height: 78px;
+  left: 60px;
+  top: 231px;
+
+  background: url(K.png);
+}
+
+.hitText {
+  position: absolute;
+  width: 60px;
+  height: 24px;
+  left: 199px;
+  top: 426px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+
+  color: #000000;
+  cursor: pointer;
+}
+
+.hitBox {
+  position: absolute;
+  width: 53px;
+  height: 37px;
+  left: 202px;
+  top: 421px;
+
+  background: #FFF800;
+  border-radius: 10px;
+  z-index: -1;
+  cursor: pointer;
+}
+
+.standText {
+  position: absolute;
+  width: 66px;
+  height: 24px;
+  left: 304px;
+  top: 426px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+
+  color: #000000;
+  cursor: pointer;
+}
+
+.standBox {
+  position: absolute;
+  width: 79px;
+  height: 37px;
+  left: 297px;
+  top: 421px;
+
+  background: #FF0B0B;
+  border-radius: 10px;
+  z-index: -1;
+  cursor: pointer;
   
-};
-  
+}
 
+.dealText {
+  position: absolute;
+  width: 70px;
+  height: 24px;
+  left: 415px;
+  top: 426px;
 
-function gett1() {
-  
-  sound();
-  gett();
-};
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
 
-function gett2() {
+  color: #000000;
+  cursor: pointer;
 
-  sound();
+}
 
- var cards2 = [
-     ["bg9xXKi", 2], ["zptXFBO", 3], ["qzqR7UD", 4], ["yrFm5qz", 5] ["1lBsrfu", 6], ["fHjITaL", 7], ["Zv5GNvj", 8],["G4bIY2z", 9], ["h24mDAr", 10], ["9REmOzw", 10] ["akpgziS", 10], ["iKiil70", 10], ["noG2HYQ", 1] 
-     ];
+.dealBox {
+  position: absolute;
+  width: 61.83px;
+  height: 37px;
+  left: 418.5px;
+  top: 421px;
 
+  background: #7BCFFF;
+  border-radius: 10px;
+  z-index: -1;
+  cursor: pointer;
+}
 
-    var randomNum =  Math.floor(Math.random() * cards2.length);
-    var cards3 = cards2[randomNum][0];
-    var cards4 = cards2[randomNum][1];
+.instructions {
+  position: absolute;
+  width: 550px;
+  height: 32px;
+  left: 79px;
+  top: 494px;
 
-    
-    var x = document.createElement("IMG");
-    x.setAttribute("src", "https://i.imgur.com/" + cards3 + ".png");
-    x.setAttribute("position", "absolute");
-    x.setAttribute("width", "65");
-    x.setAttribute("height", "80");
-    x.setAttribute("position", "absolute");
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
 
+  color: #000000;
+}
 
-    gettAppend = document.querySelector(".cardsBotDeck").appendChild(x);
+.emojiSunglass {
+  position: absolute;
+  width: 40px;
+  height: 42px;
+  left: 422px;
+  top: 490px;
+}
 
+.rules {
+  position: absolute;
+  width: 684px;
+  height: 122px;
+  left: 14px;
+  top: 549px;
 
-    var displayScore = document.querySelector(".botScore");
-    var sum = parseInt(displayScore.textContent) + cards4;
-    displayScore.textContent = sum;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+}
 
-     if (sum > 21) {
-          soundHit.pause();
-          var soundAww = new Audio('aww.mp3');
-          soundAww.play();
-          var str = " BUST!";
-          displayScore.textContent = sum + str;
+.goal {
 
-        };
+  color: #890975;
+}
 
-  document.querySelector(".dealText").addEventListener('click', function() { 
-      document.querySelector(".cardsBotDeck").removeChild(x);
-      var displayScore = document.querySelector(".botScore");
-      var sum = 0;
-      displayScore.textContent = sum;
-   
-      
+.hit {
+  color: #BC4411;
+}
 
-  });
+.stand {
+  color: #FF0B0B;
+}
 
+.deal {
+  color: #095589;
+}
 
-};
+.cardsPlayerDeck {
+  position: absolute;
+  width: 298px;
+  height: 182px;
+  left: 29px;
+  top: 222px;
 
+  background: #4F8F28;
+}
+
+.cardsBotDeck {
+position: absolute;
+width: 298px;
+height: 182px;
+left: 390px;
+top: 222px;
+
+background: #4F8F28;
+}
