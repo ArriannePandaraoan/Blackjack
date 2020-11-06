@@ -239,6 +239,11 @@ z-index: -1;
 
 }
 
+
+.refresh {
+  color: red;
+}
+
 .dealBox {
   position: absolute;
   width: 61.83px;
@@ -297,11 +302,11 @@ z-index: -1;
 }
 
 .hit {
-  color: #BC4411;
+  color: rgb(209, 0, 35);
 }
 
 .stand {
-  color: #FF0B0B;
+  color: #4F8F28;
 }
 
 .deal {
@@ -326,4 +331,35 @@ left: 390px;
 top: 222px;
 
 background: #4F8F28;
+}
+
+.box {
+  position: absolute;
+  width: 245px;
+  height: 104px;
+  left: 230px;
+  top: 227px;
+  background: linear-gradient(100.67deg, #2F8667 40.78%, rgba(107, 93, 93, 0) 121.98%);
+  z-index: 1;
+  display: none;
+}
+
+.message {
+  position: absolute;
+  width: 290px;
+  height: 81px;
+  left: 200px;
+  top: 259px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+
+  color: #FFFFFF;
+  z-index: 1;
+  display: none;
+
 }
